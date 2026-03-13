@@ -1,103 +1,1250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-locale="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Don't Spiral - Privacy Policy</title>
+  <title>Don't Spiral — Your Safe Space for Relationship Anxiety</title>
+  <meta name="description" content="Your 24/7 safe space when relationship anxiety hits. AI-powered support for ROCD, jealousy, overthinking, and breakup anxiety. Not therapy — a friend who gets it.">
+  <meta name="keywords" content="relationship anxiety, ROCD, jealousy, overthinking, anxious attachment, breakup anxiety, AI coach, relationship OCD">
+  <meta name="author" content="Don't Spiral">
+  <meta name="theme-color" content="#F8F3ED">
+  <link rel="canonical" href="https://dontspiral.app">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Don't Spiral">
+  <meta property="og:title" content="Don't Spiral — Your Safe Space for Relationship Anxiety">
+  <meta property="og:description" content="Your 24/7 AI coach for relationship anxiety. Talk through the spiral before you react.">
+  <meta property="og:image" content="assets/screenshots/en-US/01.jpg">
+  <meta property="og:url" content="https://dontspiral.app">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Don't Spiral — Relationship Anxiety Coach">
+  <meta name="twitter:description" content="Your 24/7 safe space when relationship anxiety hits. Not therapy — a friend who gets it.">
+  <meta name="twitter:image" content="assets/screenshots/en-US/01.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Don't Spiral",
+    "alternateName": "Don't Spiral: ROCD & Anxiety",
+    "description": "AI-powered relationship anxiety coach. Available 24/7 for ROCD, jealousy, overthinking, and breakup anxiety.",
+    "operatingSystem": "iOS 16+, Android 8+",
+    "applicationCategory": "HealthApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "url": "https://dontspiral.app",
+    "downloadUrl": [
+      "https://apps.apple.com/app/id6758227509",
+      "https://play.google.com/store/apps/details?id=app.dontspiral"
+    ],
+    "featureList": "24/7 AI anxiety chat, Guided breathing exercises, Personal context memory, Crisis resources, Privacy-focused",
+    "screenshot": "https://dontspiral.app/assets/screenshots/en-US/01.jpg"
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ===== RESET & VARIABLES ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --cream: #F8F3ED;
+      --cream-light: #FBF8F4;
+      --cream-warm: #F5EDE3;
+      --sage: #8B9E8B;
+      --sage-dark: #6B806B;
+      --sage-hover: #7A8E7A;
+      --sage-light: #A8B8A4;
+      --sage-muted: #B5C4B1;
+      --pink: #DFA0B0;
+      --pink-soft: #F2D0DE;
+      --pink-blush: #F5D5C8;
+      --mint: #D4E4D9;
+      --mint-light: #E5F0E8;
+      --charcoal: #1a1a2e;
+      --charcoal-soft: #2d2d45;
+      --text-secondary: #5a5a72;
+      --text-muted: #8b8b9e;
+
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Nunito', -apple-system, sans-serif;
+
+      --section-pad: clamp(5rem, 12vw, 9rem);
+      --container: min(1140px, 88vw);
+      --radius: 20px;
+      --radius-sm: 12px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
-      color: #1a1a2e;
-      background: #f8fafb;
-      padding: 24px;
-      max-width: 720px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.65;
+      overflow-x: hidden;
+      background: var(--cream-light);
+    }
+
+    /* ===== BACKGROUND ===== */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(ellipse at 8% 3%, rgba(245,213,200,0.55) 0%, transparent 50%),
+        radial-gradient(ellipse at 92% 12%, rgba(212,228,217,0.45) 0%, transparent 42%),
+        radial-gradient(ellipse at 45% 55%, rgba(248,243,237,0.7) 0%, transparent 55%),
+        radial-gradient(ellipse at 12% 88%, rgba(212,228,217,0.35) 0%, transparent 40%),
+        radial-gradient(ellipse at 85% 78%, rgba(245,213,200,0.3) 0%, transparent 42%),
+        var(--cream-light);
+    }
+
+    /* Floating blobs */
+    .blob {
+      position: fixed;
+      border-radius: 50% 40% 60% 45% / 55% 60% 40% 50%;
+      filter: blur(90px);
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .blob-1 { width: 550px; height: 550px; background: var(--pink); top: -80px; left: -80px; animation: blobFloat1 22s ease-in-out infinite; }
+    .blob-2 { width: 450px; height: 450px; background: var(--mint); top: 35%; right: -80px; animation: blobFloat2 28s ease-in-out infinite; }
+    .blob-3 { width: 380px; height: 380px; background: var(--sage-light); bottom: 5%; left: 8%; animation: blobFloat3 25s ease-in-out infinite; }
+
+    @keyframes blobFloat1 { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 33% { transform: translate(40px, 30px) rotate(5deg); } 66% { transform: translate(-20px, 50px) rotate(-3deg); } }
+    @keyframes blobFloat2 { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 33% { transform: translate(-30px, 40px) rotate(-4deg); } 66% { transform: translate(20px, -30px) rotate(6deg); } }
+    @keyframes blobFloat3 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30px, -40px); } }
+
+    /* Decorative hearts */
+    .deco-heart {
+      position: fixed;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.12;
+    }
+    .deco-heart-1 { top: 18%; left: 6%; width: 28px; color: var(--sage); animation: heartDrift 18s ease-in-out infinite; }
+    .deco-heart-2 { top: 42%; right: 8%; width: 22px; color: var(--pink); animation: heartDrift 22s ease-in-out infinite reverse; }
+    .deco-heart-3 { bottom: 22%; left: 12%; width: 18px; color: var(--sage-muted); animation: heartDrift 20s ease-in-out infinite 3s; }
+    @keyframes heartDrift { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-15px) rotate(8deg); } }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(3rem, 7vw, 5rem); }
+    h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
+    p { font-size: clamp(1rem, 1.1vw, 1.15rem); }
+    .container { width: var(--container); margin: 0 auto; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0.9rem 0;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    header.scrolled {
+      background: rgba(251,248,244,0.88);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      box-shadow: 0 1px 0 rgba(139,158,139,0.1);
+    }
+    header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: -0.03em;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--charcoal); }
+    .btn-nav {
+      background: var(--sage) !important;
+      color: white !important;
+      padding: 0.5rem 1.3rem;
+      border-radius: 100px;
+      font-weight: 600 !important;
+      font-size: 0.88rem !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+    .btn-nav:hover { background: var(--sage-hover) !important; transform: translateY(-1px); }
+    .lang-select {
+      appearance: none;
+      background: transparent;
+      border: 1px solid rgba(139,158,139,0.25);
+      border-radius: 8px;
+      padding: 0.35rem 1.8rem 0.35rem 0.6rem;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a5a72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.6rem center;
+    }
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 28px;
+      height: 20px;
+      position: relative;
+      z-index: 110;
+    }
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--charcoal);
+      border-radius: 2px;
+      position: absolute;
+      left: 0;
+      transition: all 0.3s;
+    }
+    .hamburger span:nth-child(1) { top: 0; }
+    .hamburger span:nth-child(2) { top: 9px; }
+    .hamburger span:nth-child(3) { top: 18px; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg); top: 9px; }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg); top: 9px; }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: calc(5rem + 60px) 0 var(--section-pad);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .hero-text h1 { margin-bottom: 1.2rem; color: var(--charcoal); }
+    .hero-sub {
+      font-size: clamp(1.1rem, 1.5vw, 1.3rem) !important;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-visual img {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow:
+        0 30px 60px -15px rgba(26,26,46,0.12),
+        0 0 0 1px rgba(139,158,139,0.06);
+    }
+    /* Breathing orb */
+    .breathing-orb {
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,228,217,0.5) 0%, rgba(245,213,200,0.25) 50%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.85);
+      z-index: -1;
+      animation: breathe 8s ease-in-out infinite;
+    }
+    @keyframes breathe {
+      0%, 100% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.4; }
+      50% { transform: translate(-50%, -50%) scale(1.35); opacity: 0.65; }
+    }
+
+    /* ===== STORE BADGES ===== */
+    .store-badges {
+      display: flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .store-badges.centered { justify-content: center; }
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.7rem 1.4rem;
+      background: var(--charcoal);
+      color: white;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .store-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(26,26,46,0.2);
+    }
+    .store-badge svg { flex-shrink: 0; }
+    .store-badge-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .store-badge-small { font-size: 0.6rem; font-weight: 400; opacity: 0.85; letter-spacing: 0.02em; }
+    .store-badge-name { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; }
+
+    /* ===== EMPATHY SECTION ===== */
+    #empathy {
+      padding: var(--section-pad) 0;
+      text-align: center;
+    }
+    .spiral-quotes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+    .spiral-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.5vw, 1.65rem);
+      color: var(--charcoal-soft);
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .spiral-quote.visible { opacity: 0.75; transform: none; }
+    .spiral-quote:nth-child(2) { transition-delay: 0.2s; }
+    .spiral-quote:nth-child(3) { transition-delay: 0.4s; }
+    .empathy-body {
+      color: var(--text-secondary);
+      font-weight: 400;
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: clamp(1rem, 1.2vw, 1.1rem) !important;
+    }
+
+    /* ===== FEATURES ===== */
+    #features { padding: 0 0 var(--section-pad); }
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+    .feature-row.reverse .feature-visual { order: -1; }
+    .feature-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--sage);
+      margin-bottom: 0.8rem;
+    }
+    .feature-text h2 { margin-bottom: 1rem; }
+    .feature-text p { color: var(--text-secondary); font-weight: 400; max-width: 440px; }
+    .feature-visual {
+      display: flex;
+      justify-content: center;
+    }
+    .feature-visual img {
+      width: 100%;
+      max-width: 310px;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 24px 48px -12px rgba(26,26,46,0.1);
+      transition: transform 0.4s ease;
+    }
+    .feature-visual img:hover { transform: translateY(-4px); }
+
+    /* ===== HOW IT WORKS ===== */
+    #how-it-works {
+      padding: var(--section-pad) 0;
+      text-align: center;
+    }
+    #how-it-works h2 { margin-bottom: 3.5rem; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
       margin: 0 auto;
     }
-    h1 { font-size: 1.8rem; margin-bottom: 8px; }
-    h2 { font-size: 1.3rem; margin-top: 28px; margin-bottom: 8px; }
-    p, li { margin-bottom: 8px; }
-    ul { padding-left: 20px; }
-    .meta { color: #6b7280; font-size: 0.9rem; margin-bottom: 24px; }
-    a { color: #0ea5e9; }
-    nav { margin-bottom: 24px; font-size: 0.95rem; }
-    nav a { margin-right: 16px; }
+    .step { padding: 0 1rem; }
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--sage);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0 auto 1.2rem;
+    }
+    .step h3 { margin-bottom: 0.6rem; }
+    .step p { color: var(--text-secondary); font-weight: 400; font-size: 0.95rem !important; }
+
+    /* ===== TRUST / PRIVACY ===== */
+    #trust {
+      padding: var(--section-pad) 0;
+      text-align: center;
+    }
+    #trust > .container > h2 { margin-bottom: 3rem; }
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.3rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .privacy-card {
+      background: rgba(255,255,255,0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(139,158,139,0.12);
+      border-radius: var(--radius);
+      padding: 1.8rem 1.5rem;
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .privacy-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(26,26,46,0.06);
+    }
+    .privacy-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--mint-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--sage-dark);
+    }
+    .privacy-card h3 { margin-bottom: 0.4rem; font-size: 1rem; }
+    .privacy-card p { color: var(--text-secondary); font-weight: 400; font-size: 0.9rem !important; line-height: 1.55; }
+
+    /* ===== APPROACH ===== */
+    #approach {
+      padding: var(--section-pad) 0;
+    }
+    .approach-card {
+      background: linear-gradient(145deg, rgba(212,228,217,0.25) 0%, rgba(248,243,237,0.4) 100%);
+      border: 1px solid rgba(139,158,139,0.1);
+      border-radius: var(--radius);
+      padding: clamp(2.5rem, 5vw, 4rem);
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .approach-card h2 { margin-bottom: 1.5rem; white-space: pre-line; }
+    .approach-card p {
+      color: var(--text-secondary);
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto 1rem;
+      font-size: clamp(1rem, 1.2vw, 1.1rem) !important;
+    }
+    .approach-card p:last-child {
+      margin-bottom: 0;
+      font-weight: 600;
+      color: var(--charcoal-soft);
+      font-style: italic;
+      font-family: var(--font-display);
+    }
+
+    /* ===== SCREENSHOT GALLERY ===== */
+    #gallery { padding: var(--section-pad) 0 calc(var(--section-pad) / 2); }
+    .gallery-scroll {
+      display: flex;
+      gap: 1.3rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 1rem 5vw 2rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .gallery-scroll::-webkit-scrollbar { display: none; }
+    .gallery-scroll img {
+      scroll-snap-align: center;
+      flex: 0 0 auto;
+      width: 240px;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 16px 36px -8px rgba(26,26,46,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery-scroll img:hover { transform: scale(1.03); }
+
+    /* ===== DOWNLOAD CTA ===== */
+    #download {
+      padding: var(--section-pad) 0;
+      text-align: center;
+    }
+    #download h2 { margin-bottom: 1rem; }
+    #download .download-sub {
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      font-size: clamp(1rem, 1.3vw, 1.15rem) !important;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 3rem 0;
+      border-top: 1px solid rgba(139,158,139,0.12);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-brand {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--charcoal); }
+    .footer-disclaimer {
+      width: 100%;
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(139,158,139,0.08);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .privacy-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(251,248,244,0.97);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        z-index: 105;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1.2rem; }
+      .btn-nav { padding: 0.7rem 2rem !important; font-size: 1rem !important; }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-sub { margin-left: auto; margin-right: auto; }
+      .store-badges { justify-content: center; }
+      .hero-visual { order: -1; margin-bottom: 1rem; }
+      .hero-visual img { max-width: 280px; }
+      .breathing-orb { width: 200px; height: 200px; }
+
+      .feature-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .feature-row.reverse .feature-visual { order: 0; }
+      .feature-visual { order: -1; }
+      .feature-visual img { max-width: 260px; }
+      .feature-text p { margin-left: auto; margin-right: auto; }
+
+      .steps { grid-template-columns: 1fr; max-width: 360px; }
+      .privacy-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2.6rem; }
+      .store-badges { flex-direction: column; align-items: center; }
+      .store-badge { width: 100%; max-width: 240px; justify-content: center; }
+    }
   </style>
 </head>
+
 <body>
-  <nav>
-    <strong>Don't Spiral</strong> &mdash;
-    <a href="index.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Use</a>
-  </nav>
+  <!-- Decorative elements -->
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+  <svg class="deco-heart deco-heart-1" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  <svg class="deco-heart deco-heart-2" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+  <svg class="deco-heart deco-heart-3" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
 
-  <h1>Privacy Policy</h1>
-  <p class="meta">App: Don't Spiral &mdash; Effective date: February 18, 2026</p>
+  <!-- HEADER -->
+  <header id="site-header">
+    <nav class="container">
+      <a href="/" class="logo">Don't Spiral</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#how-it-works" data-i18n="nav.how">How it Works</a>
+        <a href="#trust" data-i18n="nav.privacy">Privacy</a>
+        <select class="lang-select" id="lang-select" aria-label="Language">
+          <option value="en-US">English</option>
+          <option value="de-DE">Deutsch</option>
+          <option value="es-ES">Espa&ntilde;ol</option>
+          <option value="fr-FR">Fran&ccedil;ais</option>
+          <option value="it">Italiano</option>
+          <option value="ja">&#26085;&#26412;&#35486;</option>
+          <option value="ko">&#54620;&#44397;&#50612;</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Portugu&ecirc;s</option>
+          <option value="tr">T&uuml;rk&ccedil;e</option>
+        </select>
+        <a href="#download" class="btn-nav" data-i18n="nav.download">Download</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
 
-  <h2>1. What data we collect</h2>
-  <ul>
-    <li><strong>Account information</strong> &mdash; email address (or Google/Apple account identifier) used to create your account.</li>
-    <li><strong>Personal context</strong> &mdash; optional "life facts" you choose to save (e.g. relationship details) to improve AI responses.</li>
-    <li><strong>Session feedback</strong> &mdash; optional ratings and comments you leave after a session.</li>
-    <li><strong>Usage statistics</strong> &mdash; number of sessions, message counts, and session categories (no message content).</li>
-  </ul>
-  <p>
-    <strong>Chat messages are not stored.</strong> Your conversation text is processed in real time
-    to generate AI responses but is not persisted on our servers after the session ends.
-  </p>
+  <main>
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1 data-i18n="hero.headline">Take a breath.</h1>
+          <p class="hero-sub" data-i18n="hero.sub">A safe, judgment-free space to process your relationship before you react. Available 24/7 when the spiral hits.</p>
+          <div class="store-badges">
+            <a href="https://apps.apple.com/app/id6758227509" class="store-badge" target="_blank" rel="noopener">
+              <svg width="22" height="26" viewBox="0 0 22 26" fill="white"><path d="M17.8 13.6c0-2.8 2.3-4.1 2.4-4.2-1.3-1.9-3.3-2.2-4-2.2-1.7-.2-3.4 1-4.2 1s-2.2-1-3.7-1c-1.9 0-3.6 1.1-4.6 2.8-2 3.4-.5 8.5 1.4 11.3.9 1.4 2.1 2.9 3.5 2.8 1.4-.1 1.9-.9 3.6-.9s2.2.9 3.7.9 2.4-1.4 3.4-2.7c1.1-1.6 1.5-3.1 1.5-3.1C20.8 18 17.8 16.9 17.8 13.6zM15 5.4c.8-1 1.4-2.3 1.2-3.6-1.2 0-2.6.8-3.5 1.8-.7.9-1.4 2.3-1.2 3.6C12.8 7.3 14.2 6.4 15 5.4z"/></svg>
+              <div class="store-badge-text">
+                <span class="store-badge-small" data-i18n="badge.apple.pre">Download on the</span>
+                <span class="store-badge-name">App Store</span>
+              </div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=app.dontspiral" class="store-badge" target="_blank" rel="noopener">
+              <svg width="22" height="24" viewBox="0 0 22 24" fill="white"><path d="M1.2 0.5C0.9 0.8 0.7 1.3 0.7 2v20c0 .7.2 1.2.5 1.5l.1.1L12.3 12.5v-.2-.2L1.3 0.4 1.2.5z"/><path d="M16 16.2l-3.7-3.7v-.2-.2l3.7-3.7.1.1 4.4 2.5c1.3.7 1.3 1.9 0 2.6l-4.4 2.5-.1.1z"/><path d="M16.1 16.1L12.3 12.3 1.2 23.5c.4.4 1.1.5 1.9.1l13-7.5"/><path d="M16.1 8.9l-13-7.4c-.8-.5-1.5-.4-1.9.1l11.1 11.1 3.8-3.8z"/></svg>
+              <div class="store-badge-text">
+                <span class="store-badge-small" data-i18n="badge.google.pre">Get it on</span>
+                <span class="store-badge-name">Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="breathing-orb" aria-hidden="true"></div>
+          <img data-screenshot="01" src="assets/screenshots/en-US/01.jpg" alt="Don't Spiral app — Your 24/7 relationship intervention" width="630" height="1368" fetchpriority="high">
+        </div>
+      </div>
+    </section>
 
-  <h2>2. How data is stored</h2>
-  <p>
-    All data is stored in compliance with the EU General Data Protection Regulation (GDPR) on servers hosted by
-    <a href="https://www.hetzner.com" target="_blank" rel="noopener">Hetzner</a>
-    in the European Union (Helsinki, Finland). All connections use TLS encryption.
-  </p>
+    <!-- ===== EMPATHY ===== -->
+    <section id="empathy">
+      <div class="container">
+        <div class="spiral-quotes" id="spiral-quotes">
+          <p class="spiral-quote" data-i18n="empathy.q1">"I can't stop checking their phone."</p>
+          <p class="spiral-quote" data-i18n="empathy.q2">"What if they don't actually love me?"</p>
+          <p class="spiral-quote" data-i18n="empathy.q3">"I shouldn't have sent that text."</p>
+        </div>
+        <p class="empathy-body reveal" data-i18n="empathy.p">Sound familiar? Relationship anxiety can feel all-consuming. The constant doubts, the spiraling thoughts, the urge to seek reassurance. Don't Spiral is here for those moments &mdash; not tomorrow, not next week, right now.</p>
+      </div>
+    </section>
 
-  <h2>3. AI processing</h2>
-  <p>
-    When you send a message, the conversation text is transmitted through our servers to the
-    <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
-    Claude API to generate a supportive response. Only the conversation text is sent &mdash;
-    no personal identifiers (email, name, account ID) are included in AI requests.
-  </p>
-  <p>
-    Anthropic operates a <strong>zero-retention policy</strong> for API data: your messages are
-    not stored by Anthropic after processing and are <strong>never used to train AI models</strong>.
-    Learn more about
-    <a href="https://privacy.claude.com/en/collections/10663361-commercial-customers" target="_blank" rel="noopener">Anthropic's commercial data practices</a>.
-  </p>
+    <!-- ===== FEATURES ===== -->
+    <section id="features">
+      <div class="container">
+        <!-- Chat -->
+        <div class="feature-row reveal">
+          <div class="feature-text">
+            <span class="feature-label" data-i18n="feat.chat.label">24/7 Support</span>
+            <h2 data-i18n="feat.chat.title">A best friend, always awake.</h2>
+            <p data-i18n="feat.chat.desc">A space to vent, process, and find your cool before you say something you'll regret. Zero judgment. Honest feedback. No matter what you share.</p>
+          </div>
+          <div class="feature-visual">
+            <img data-screenshot="02" src="assets/screenshots/en-US/02.jpg" loading="lazy" alt="AI chat conversation showing supportive response to relationship anxiety" width="630" height="1368">
+          </div>
+        </div>
 
-  <h2>4. No selling, sharing, or advertising</h2>
-  <p>
-    We do not sell your data. We do not share your data with third parties for advertising or
-    marketing purposes. Your data is used solely to provide the Don't Spiral service.
-  </p>
+        <!-- Breathing -->
+        <div class="feature-row reverse reveal">
+          <div class="feature-text">
+            <span class="feature-label" data-i18n="feat.breathe.label">Instant Relief</span>
+            <h2 data-i18n="feat.breathe.title">Calm in seconds.</h2>
+            <p data-i18n="feat.breathe.desc">Quick breathing exercises to ground your nervous system in difficult moments. When the panic hits, this is your first stop.</p>
+          </div>
+          <div class="feature-visual">
+            <img data-screenshot="04" src="assets/screenshots/en-US/04.jpg" loading="lazy" alt="Guided breathing exercise interface" width="630" height="1368">
+          </div>
+        </div>
 
-  <h2>5. Data deletion</h2>
-  <p>
-    You can delete all your data at any time from within the app:
-    <strong>Settings &rarr; Delete Account</strong>. This permanently removes your account,
-    all chat sessions, life facts, preferences, and feedback from our servers.
-  </p>
+        <!-- Memory -->
+        <div class="feature-row reveal">
+          <div class="feature-text">
+            <span class="feature-label" data-i18n="feat.memory.label">Personal Context</span>
+            <h2 data-i18n="feat.memory.title">Understands you.</h2>
+            <p data-i18n="feat.memory.desc">The more it knows about your life and relationships, the better it helps you navigate difficult moments. It remembers your story, so you don't have to explain from scratch every time.</p>
+          </div>
+          <div class="feature-visual">
+            <img data-screenshot="05" src="assets/screenshots/en-US/05.jpg" loading="lazy" alt="Personal context showing saved people and relationship details" width="630" height="1368">
+          </div>
+        </div>
 
-  <h2>6. Children's privacy</h2>
-  <p>
-    Don't Spiral is not intended for users under the age of 16. We do not knowingly collect personal
-    data from children.
-  </p>
+        <!-- Privacy -->
+        <div class="feature-row reverse reveal">
+          <div class="feature-text">
+            <span class="feature-label" data-i18n="feat.privacy.label">Trust &amp; Safety</span>
+            <h2 data-i18n="feat.privacy.title">Your secret safe space.</h2>
+            <p data-i18n="feat.privacy.desc">Your conversations are never stored or used to train a model. We built this to help you, not to harvest your most vulnerable moments.</p>
+          </div>
+          <div class="feature-visual">
+            <img data-screenshot="03" src="assets/screenshots/en-US/03.jpg" loading="lazy" alt="Privacy features showing data protection policies" width="630" height="1368">
+          </div>
+        </div>
 
-  <h2>7. Changes to this policy</h2>
-  <p>
-    We may update this policy from time to time. Significant changes will be communicated
-    through the app. Continued use of the app after changes constitutes acceptance of the
-    updated policy.
-  </p>
+        <!-- Resources -->
+        <div class="feature-row reveal">
+          <div class="feature-text">
+            <span class="feature-label" data-i18n="feat.resources.label">When You Need More</span>
+            <h2 data-i18n="feat.resources.title">Expert guidance.</h2>
+            <p data-i18n="feat.resources.desc">Easily connect with professional resources when you need extra support. Crisis hotlines and licensed therapist directories, one tap away.</p>
+          </div>
+          <div class="feature-visual">
+            <img data-screenshot="06" src="assets/screenshots/en-US/06.jpg" loading="lazy" alt="Crisis resources and professional support connections" width="630" height="1368">
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <h2>8. Contact</h2>
-  <p>
-    For questions about this privacy policy or your data, contact us at
-    <a href="mailto:apps@burkharts.net">apps@burkharts.net</a>.
-  </p>
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how-it-works">
+      <div class="container">
+        <h2 class="reveal" data-i18n="how.title">How it works</h2>
+        <div class="steps">
+          <div class="step reveal reveal-delay-1">
+            <div class="step-number">1</div>
+            <h3 data-i18n="how.step1.title">Download</h3>
+            <p data-i18n="how.step1.desc">Free on iOS and Android. No account required to start.</p>
+          </div>
+          <div class="step reveal reveal-delay-2">
+            <div class="step-number">2</div>
+            <h3 data-i18n="how.step2.title">Talk it out</h3>
+            <p data-i18n="how.step2.desc">Tell it what's on your mind. Vent, ask questions, or just say what you're feeling.</p>
+          </div>
+          <div class="step reveal reveal-delay-3">
+            <div class="step-number">3</div>
+            <h3 data-i18n="how.step3.title">Find clarity</h3>
+            <p data-i18n="how.step3.desc">Get honest feedback and grounding techniques before you react.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRUST / PRIVACY ===== -->
+    <section id="trust">
+      <div class="container">
+        <h2 class="reveal" data-i18n="trust.title">Private by design.</h2>
+        <div class="privacy-grid">
+          <div class="privacy-card reveal reveal-delay-1">
+            <div class="privacy-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 data-i18n="privacy.never_stored">Conversations never stored</h3>
+            <p data-i18n="privacy.never_stored.desc">Messages are processed in real time and discarded. Nothing is saved on our servers.</p>
+          </div>
+          <div class="privacy-card reveal reveal-delay-2">
+            <div class="privacy-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 data-i18n="privacy.no_training">Not used to train AI</h3>
+            <p data-i18n="privacy.no_training.desc">Anthropic's zero-retention API means your words are never used to train models.</p>
+          </div>
+          <div class="privacy-card reveal reveal-delay-3">
+            <div class="privacy-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 data-i18n="privacy.gdpr">GDPR compliant</h3>
+            <p data-i18n="privacy.gdpr.desc">Data stored on EU servers in Helsinki. Full GDPR compliance.</p>
+          </div>
+          <div class="privacy-card reveal reveal-delay-1">
+            <div class="privacy-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+            </div>
+            <h3 data-i18n="privacy.delete">Delete anytime</h3>
+            <p data-i18n="privacy.delete.desc">One tap to permanently erase your account and all associated data.</p>
+          </div>
+          <div class="privacy-card reveal reveal-delay-2">
+            <div class="privacy-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3 data-i18n="privacy.ethical">Ethical by design</h3>
+            <p data-i18n="privacy.ethical.desc">No "we miss you" notifications. No exploiting your distress for retention. Built to help, not to hook.</p>
+          </div>
+          <div class="privacy-card reveal reveal-delay-3">
+            <div class="privacy-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </div>
+            <h3 data-i18n="privacy.no_ads">No ads. No data selling.</h3>
+            <p data-i18n="privacy.no_ads.desc">Your data exists solely to help you. We don't sell it, share it, or monetize it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== APPROACH ===== -->
+    <section id="approach">
+      <div class="container">
+        <div class="approach-card reveal">
+          <h2 data-i18n="approach.title">Not therapy.
+Something different.</h2>
+          <p data-i18n="approach.p1">Don't Spiral isn't a therapist, and it doesn't pretend to be. Think of it as the friend who stays up with you at 3am &mdash; who won't let you send that text, who helps you separate what you're feeling from what's actually happening.</p>
+          <p data-i18n="approach.p2">Built by someone who's been in the spiral. Designed to help you get out.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SCREENSHOT GALLERY ===== -->
+    <section id="gallery">
+      <div class="gallery-scroll">
+        <img data-screenshot="01" src="assets/screenshots/en-US/01.jpg" loading="lazy" alt="Don't Spiral welcome screen" width="315" height="684">
+        <img data-screenshot="02" src="assets/screenshots/en-US/02.jpg" loading="lazy" alt="AI chat feature" width="315" height="684">
+        <img data-screenshot="03" src="assets/screenshots/en-US/03.jpg" loading="lazy" alt="Privacy features" width="315" height="684">
+        <img data-screenshot="04" src="assets/screenshots/en-US/04.jpg" loading="lazy" alt="Breathing exercises" width="315" height="684">
+        <img data-screenshot="05" src="assets/screenshots/en-US/05.jpg" loading="lazy" alt="Personal context" width="315" height="684">
+        <img data-screenshot="06" src="assets/screenshots/en-US/06.jpg" loading="lazy" alt="Crisis resources" width="315" height="684">
+        <img data-screenshot="07" src="assets/screenshots/en-US/07.jpg" loading="lazy" alt="Professional care" width="315" height="684">
+      </div>
+    </section>
+
+    <!-- ===== DOWNLOAD CTA ===== -->
+    <section id="download">
+      <div class="container">
+        <h2 class="reveal" data-i18n="download.title">Ready to stop spiraling?</h2>
+        <p class="download-sub reveal" data-i18n="download.sub">Free to download. Your first conversation is on us.</p>
+        <div class="store-badges centered reveal">
+          <a href="https://apps.apple.com/app/id6758227509" class="store-badge" target="_blank" rel="noopener">
+            <svg width="22" height="26" viewBox="0 0 22 26" fill="white"><path d="M17.8 13.6c0-2.8 2.3-4.1 2.4-4.2-1.3-1.9-3.3-2.2-4-2.2-1.7-.2-3.4 1-4.2 1s-2.2-1-3.7-1c-1.9 0-3.6 1.1-4.6 2.8-2 3.4-.5 8.5 1.4 11.3.9 1.4 2.1 2.9 3.5 2.8 1.4-.1 1.9-.9 3.6-.9s2.2.9 3.7.9 2.4-1.4 3.4-2.7c1.1-1.6 1.5-3.1 1.5-3.1C20.8 18 17.8 16.9 17.8 13.6zM15 5.4c.8-1 1.4-2.3 1.2-3.6-1.2 0-2.6.8-3.5 1.8-.7.9-1.4 2.3-1.2 3.6C12.8 7.3 14.2 6.4 15 5.4z"/></svg>
+            <div class="store-badge-text">
+              <span class="store-badge-small" data-i18n="badge.apple.pre">Download on the</span>
+              <span class="store-badge-name">App Store</span>
+            </div>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=app.dontspiral" class="store-badge" target="_blank" rel="noopener">
+            <svg width="22" height="24" viewBox="0 0 22 24" fill="white"><path d="M1.2 0.5C0.9 0.8 0.7 1.3 0.7 2v20c0 .7.2 1.2.5 1.5l.1.1L12.3 12.5v-.2-.2L1.3 0.4 1.2.5z"/><path d="M16 16.2l-3.7-3.7v-.2-.2l3.7-3.7.1.1 4.4 2.5c1.3.7 1.3 1.9 0 2.6l-4.4 2.5-.1.1z"/><path d="M16.1 16.1L12.3 12.3 1.2 23.5c.4.4 1.1.5 1.9.1l13-7.5"/><path d="M16.1 8.9l-13-7.4c-.8-.5-1.5-.4-1.9.1l11.1 11.1 3.8-3.8z"/></svg>
+            <div class="store-badge-text">
+              <span class="store-badge-small" data-i18n="badge.google.pre">Get it on</span>
+              <span class="store-badge-name">Google Play</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">Don't Spiral</div>
+        <div class="footer-links">
+          <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n="footer.terms">Terms of Use</a>
+          <a href="mailto:apps@burkharts.net" data-i18n="footer.contact">Contact</a>
+        </div>
+        <select class="lang-select" id="lang-select-footer" aria-label="Language">
+          <option value="en-US">English</option>
+          <option value="de-DE">Deutsch</option>
+          <option value="es-ES">Espa&ntilde;ol</option>
+          <option value="fr-FR">Fran&ccedil;ais</option>
+          <option value="it">Italiano</option>
+          <option value="ja">&#26085;&#26412;&#35486;</option>
+          <option value="ko">&#54620;&#44397;&#50612;</option>
+          <option value="pl">Polski</option>
+          <option value="pt-BR">Portugu&ecirc;s</option>
+          <option value="tr">T&uuml;rk&ccedil;e</option>
+        </select>
+      </div>
+      <p class="footer-disclaimer" data-i18n="footer.not_therapy">Don't Spiral is not a therapy or counseling service. It does not replace professional mental health support. If you are in crisis, please contact a professional or your local emergency services. &copy; 2026 Don't Spiral. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== TRANSLATIONS ===== */
+    const T = {
+      'en-US': {
+        _sl: 'en-US',
+        'nav.features': 'Features',
+        'nav.how': 'How it Works',
+        'nav.privacy': 'Privacy',
+        'nav.download': 'Download',
+        'hero.headline': 'Take a breath.',
+        'hero.sub': 'A safe, judgment-free space to process your relationship before you react. Available 24/7 when the spiral hits.',
+        'badge.apple.pre': 'Download on the',
+        'badge.google.pre': 'Get it on',
+        'empathy.q1': '\u201cI can\u2019t stop checking their phone.\u201d',
+        'empathy.q2': '\u201cWhat if they don\u2019t actually love me?\u201d',
+        'empathy.q3': '\u201cI shouldn\u2019t have sent that text.\u201d',
+        'empathy.p': 'Sound familiar? Relationship anxiety can feel all-consuming. The constant doubts, the spiraling thoughts, the urge to seek reassurance. Don\u2019t Spiral is here for those moments \u2014 not tomorrow, not next week, right now.',
+        'feat.chat.label': '24/7 Support',
+        'feat.chat.title': 'A best friend, always awake.',
+        'feat.chat.desc': 'A space to vent, process, and find your cool before you say something you\u2019ll regret. Zero judgment. Honest feedback. No matter what you share.',
+        'feat.breathe.label': 'Instant Relief',
+        'feat.breathe.title': 'Calm in seconds.',
+        'feat.breathe.desc': 'Quick breathing exercises to ground your nervous system in difficult moments. When the panic hits, this is your first stop.',
+        'feat.memory.label': 'Personal Context',
+        'feat.memory.title': 'Understands you.',
+        'feat.memory.desc': 'The more it knows about your life and relationships, the better it helps you navigate difficult moments. It remembers your story, so you don\u2019t have to explain from scratch every time.',
+        'feat.privacy.label': 'Trust & Safety',
+        'feat.privacy.title': 'Your secret safe space.',
+        'feat.privacy.desc': 'Your conversations are never stored or used to train a model. We built this to help you, not to harvest your most vulnerable moments.',
+        'feat.resources.label': 'When You Need More',
+        'feat.resources.title': 'Expert guidance.',
+        'feat.resources.desc': 'Easily connect with professional resources when you need extra support. Crisis hotlines and licensed therapist directories, one tap away.',
+        'how.title': 'How it works',
+        'how.step1.title': 'Download',
+        'how.step1.desc': 'Free on iOS and Android. No account required to start.',
+        'how.step2.title': 'Talk it out',
+        'how.step2.desc': 'Tell it what\u2019s on your mind. Vent, ask questions, or just say what you\u2019re feeling.',
+        'how.step3.title': 'Find clarity',
+        'how.step3.desc': 'Get honest feedback and grounding techniques before you react.',
+        'trust.title': 'Private by design.',
+        'privacy.never_stored': 'Conversations never stored',
+        'privacy.never_stored.desc': 'Messages are processed in real time and discarded. Nothing is saved on our servers.',
+        'privacy.no_training': 'Not used to train AI',
+        'privacy.no_training.desc': 'Anthropic\u2019s zero-retention API means your words are never used to train models.',
+        'privacy.gdpr': 'GDPR compliant',
+        'privacy.gdpr.desc': 'Data stored on EU servers in Helsinki. Full GDPR compliance.',
+        'privacy.delete': 'Delete anytime',
+        'privacy.delete.desc': 'One tap to permanently erase your account and all associated data.',
+        'privacy.ethical': 'Ethical by design',
+        'privacy.ethical.desc': 'No \u201cwe miss you\u201d notifications. No exploiting your distress for retention. Built to help, not to hook.',
+        'privacy.no_ads': 'No ads. No data selling.',
+        'privacy.no_ads.desc': 'Your data exists solely to help you. We don\u2019t sell it, share it, or monetize it.',
+        'approach.title': 'Not therapy.\nSomething different.',
+        'approach.p1': 'Don\u2019t Spiral isn\u2019t a therapist, and it doesn\u2019t pretend to be. Think of it as the friend who stays up with you at 3am \u2014 who won\u2019t let you send that text, who helps you separate what you\u2019re feeling from what\u2019s actually happening.',
+        'approach.p2': 'Built by someone who\u2019s been in the spiral. Designed to help you get out.',
+        'download.title': 'Ready to stop spiraling?',
+        'download.sub': 'Free to download. Your first conversation is on us.',
+        'footer.privacy': 'Privacy Policy',
+        'footer.terms': 'Terms of Use',
+        'footer.contact': 'Contact',
+        'footer.not_therapy': 'Don\u2019t Spiral is not a therapy or counseling service. It does not replace professional mental health support. If you are in crisis, please contact a professional or your local emergency services. \u00a9 2026 Don\u2019t Spiral. All rights reserved.',
+      },
+      'de-DE': {
+        _sl: 'de-DE',
+        'nav.features': 'Funktionen',
+        'nav.how': 'So funktioniert\u2019s',
+        'nav.privacy': 'Datenschutz',
+        'nav.download': 'Laden',
+        'hero.headline': 'Atme durch.',
+        'hero.sub': 'Dein sicherer Raum, um deine Beziehung zu verarbeiten, bevor du reagierst. Rund um die Uhr verf\u00fcgbar.',
+        'badge.apple.pre': 'Laden im',
+        'badge.google.pre': 'Jetzt bei',
+        'empathy.q1': '\u201eIch kann nicht aufh\u00f6ren, sein Handy zu checken.\u201c',
+        'empathy.q2': '\u201eWas, wenn er mich gar nicht wirklich liebt?\u201c',
+        'empathy.q3': '\u201eIch h\u00e4tte diese Nachricht nicht senden sollen.\u201c',
+        'empathy.p': 'Kommt dir bekannt vor? Beziehungsangst kann alles verschlingen. Die st\u00e4ndigen Zweifel, die Gedankenspiralen, der Drang nach Best\u00e4tigung. Don\u2019t Spiral ist f\u00fcr genau diese Momente da \u2014 nicht morgen, nicht n\u00e4chste Woche, jetzt.',
+        'feat.chat.label': '24/7 Unterst\u00fctzung',
+        'feat.chat.title': 'Ein bester Freund, immer wach.',
+        'feat.chat.desc': 'Ein Raum zum Reden, Verarbeiten und Runterkommen \u2014 bevor du etwas sagst, das du bereust.',
+        'feat.breathe.label': 'Soforthilfe',
+        'feat.breathe.title': 'Ruhe in Sekunden.',
+        'feat.breathe.desc': 'Schnelle Atem\u00fcbungen, um dein Nervensystem in schwierigen Momenten zu erden.',
+        'feat.memory.label': 'Pers\u00f6nlicher Kontext',
+        'feat.memory.title': 'Versteht dich.',
+        'feat.memory.desc': 'Je mehr es \u00fcber dein Leben wei\u00df, desto besser kann es dir helfen. Es erinnert sich an deine Geschichte.',
+        'feat.privacy.label': 'Vertrauen & Sicherheit',
+        'feat.privacy.title': 'Dein geheimer sicherer Raum.',
+        'feat.privacy.desc': 'Deine Gespr\u00e4che werden niemals gespeichert oder zum Training eines Modells verwendet.',
+        'feat.resources.label': 'Wenn du mehr brauchst',
+        'feat.resources.title': 'Professionelle Hilfe.',
+        'feat.resources.desc': 'Einfacher Zugang zu professionellen Ressourcen und Krisenhotlines.',
+        'how.title': 'So funktioniert\u2019s',
+        'how.step1.title': 'Herunterladen',
+        'how.step1.desc': 'Kostenlos f\u00fcr iOS und Android.',
+        'how.step2.title': 'Erz\u00e4hl davon',
+        'how.step2.desc': 'Sag, was gerade los ist. Lass es raus.',
+        'how.step3.title': 'Finde Klarheit',
+        'how.step3.desc': 'Ehrliches Feedback und Beruhigungstechniken.',
+        'trust.title': 'Privat by Design.',
+        'privacy.never_stored': 'Gespr\u00e4che werden nie gespeichert',
+        'privacy.never_stored.desc': 'Nachrichten werden in Echtzeit verarbeitet und verworfen.',
+        'privacy.no_training': 'Kein KI-Training',
+        'privacy.no_training.desc': 'Anthropics Zero-Retention-API: Deine Worte trainieren keine Modelle.',
+        'privacy.gdpr': 'DSGVO-konform',
+        'privacy.gdpr.desc': 'Daten auf EU-Servern in Helsinki gespeichert.',
+        'privacy.delete': 'Jederzeit l\u00f6schen',
+        'privacy.delete.desc': 'Ein Tipp, um dein Konto und alle Daten dauerhaft zu l\u00f6schen.',
+        'privacy.ethical': 'Ethisch designt',
+        'privacy.ethical.desc': 'Keine \u201eWir vermissen dich\u201c-Benachrichtigungen. Kein Ausnutzen deiner Not.',
+        'privacy.no_ads': 'Keine Werbung. Kein Datenverkauf.',
+        'privacy.no_ads.desc': 'Deine Daten dienen nur dazu, dir zu helfen.',
+        'approach.title': 'Keine Therapie.\nEtwas anderes.',
+        'approach.p1': 'Don\u2019t Spiral ist kein Therapeut \u2014 und gibt auch nicht vor, einer zu sein. Denk an den Freund, der um 3 Uhr morgens noch wach ist und dich nicht die Nachricht senden l\u00e4sst.',
+        'approach.p2': 'Gebaut von jemandem, der die Spirale kennt.',
+        'download.title': 'Bereit, die Spirale zu stoppen?',
+        'download.sub': 'Kostenlos herunterladen. Dein erstes Gespr\u00e4ch geht auf uns.',
+        'footer.privacy': 'Datenschutz',
+        'footer.terms': 'Nutzungsbedingungen',
+        'footer.contact': 'Kontakt',
+        'footer.not_therapy': 'Don\u2019t Spiral ist kein Therapie- oder Beratungsservice. Bei Krisen kontaktiere bitte professionelle Hilfe. \u00a9 2026 Don\u2019t Spiral.',
+      },
+      'es-ES': {
+        _sl: 'es-ES',
+        'hero.headline': 'Respira.',
+        'hero.sub': 'Un espacio seguro para procesar tu relaci\u00f3n antes de reaccionar. Disponible 24/7.',
+        'empathy.q1': '\u201cNo puedo dejar de revisar su tel\u00e9fono.\u201d',
+        'empathy.q2': '\u201c\u00bfY si realmente no me quiere?\u201d',
+        'empathy.q3': '\u201cNo deber\u00eda haber enviado ese mensaje.\u201d',
+        'feat.chat.title': 'Un mejor amigo, siempre despierto.',
+        'feat.breathe.title': 'Calma en segundos.',
+        'feat.memory.title': 'Te entiende.',
+        'feat.privacy.title': 'Tu espacio secreto seguro.',
+        'feat.resources.title': 'Orientaci\u00f3n profesional.',
+        'approach.title': 'No es terapia.\nAlgo diferente.',
+        'download.title': '\u00bfListo para dejar de dar vueltas?',
+      },
+      'fr-FR': {
+        _sl: 'fr-FR',
+        'hero.headline': 'Respire.',
+        'hero.sub': 'Un espace s\u00fbr pour traiter votre relation avant de r\u00e9agir. Disponible 24h/24.',
+        'feat.chat.title': 'Un meilleur ami, toujours \u00e9veill\u00e9.',
+        'feat.breathe.title': 'Calme en secondes.',
+        'feat.memory.title': 'Vous comprend.',
+        'feat.privacy.title': 'Votre espace secret s\u00e9curis\u00e9.',
+        'approach.title': 'Pas une th\u00e9rapie.\nQuelque chose de diff\u00e9rent.',
+        'download.title': 'Pr\u00eat \u00e0 arr\u00eater la spirale\u00a0?',
+      },
+      'it': {
+        _sl: 'it',
+        'hero.headline': 'Fai un respiro.',
+        'hero.sub': 'Uno spazio sicuro per elaborare la tua relazione prima di reagire. Disponibile 24/7.',
+        'feat.chat.title': 'Un migliore amico, sempre sveglio.',
+        'feat.breathe.title': 'Calma in pochi secondi.',
+        'feat.memory.title': 'Ti capisce.',
+        'feat.privacy.title': 'Il tuo spazio segreto sicuro.',
+        'approach.title': 'Non \u00e8 terapia.\nQualcosa di diverso.',
+        'download.title': 'Pronto a fermare la spirale?',
+      },
+      'ja': {
+        _sl: 'ja',
+        'hero.headline': '\u6df1\u547c\u5438\u3057\u3066\u3002',
+        'hero.sub': '\u604b\u611b\u4e0d\u5b89\u3092\u611f\u3058\u305f\u3068\u304d\u306e\u3001\u5b89\u5168\u3067\u5224\u65ad\u306e\u306a\u3044\u5834\u6240\u300224\u6642\u9593\u5229\u7528\u53ef\u80fd\u3002',
+        'feat.chat.title': '\u3044\u3064\u3082\u8d77\u304d\u3066\u3044\u308b\u89aa\u53cb\u3002',
+        'feat.breathe.title': '\u6570\u79d2\u3067\u843d\u3061\u7740\u304f\u3002',
+        'feat.memory.title': '\u3042\u306a\u305f\u3092\u7406\u89e3\u3059\u308b\u3002',
+        'approach.title': '\u30bb\u30e9\u30d4\u30fc\u3067\u306f\u306a\u3044\u3002\n\u4f55\u304b\u9055\u3046\u3082\u306e\u3002',
+        'download.title': '\u30b9\u30d1\u30a4\u30e9\u30eb\u3092\u6b62\u3081\u308b\u6e96\u5099\u306f\uff1f',
+      },
+      'ko': {
+        _sl: 'ko',
+        'hero.headline': '\uc2ec\ud638\ud761\ud558\uc138\uc694.',
+        'hero.sub': '\uc5f0\uc560 \ubd88\uc548\uc774 \ubc00\ub824\uc62c \ub54c, \ud310\ub2e8 \uc5c6\ub294 \uc548\uc804\ud55c \uacf5\uac04. 24\uc2dc\uac04 \uc774\uc6a9 \uac00\ub2a5.',
+        'feat.chat.title': '\ud56d\uc0c1 \uae68\uc5b4 \uc788\ub294 \uce5c\ud55c \uce5c\uad6c.',
+        'feat.breathe.title': '\uba87 \ucd08 \ub9cc\uc5d0 \ud3c9\uc628\ud568\uc744.',
+        'feat.memory.title': '\ub2f9\uc2e0\uc744 \uc774\ud574\ud569\ub2c8\ub2e4.',
+        'approach.title': '\uce58\ub8cc\uac00 \uc544\ub2d9\ub2c8\ub2e4.\n\ub2e4\ub978 \ubb34\uc5b8\uac00\uc785\ub2c8\ub2e4.',
+        'download.title': '\uc2a4\ud30c\uc774\ub7f4\uc744 \uba48\ucd9c \uc900\ube44\uac00 \ub418\uc168\ub098\uc694?',
+      },
+      'pl': {
+        _sl: 'pl',
+        'hero.headline': 'We\u017a g\u0142\u0119boki oddech.',
+        'hero.sub': 'Bezpieczna przestrze\u0144 do przetworzenia emocji, zanim zareagujesz. Dost\u0119pne 24/7.',
+        'feat.chat.title': 'Najlepszy przyjaciel, zawsze czuwa.',
+        'feat.breathe.title': 'Spok\u00f3j w kilka sekund.',
+        'feat.memory.title': 'Rozumie Ci\u0119.',
+        'approach.title': 'To nie terapia.\nCo\u015b innego.',
+        'download.title': 'Gotowy, by zatrzyma\u0107 spiral\u0119?',
+      },
+      'pt-BR': {
+        _sl: 'pt-BR',
+        'hero.headline': 'Respire fundo.',
+        'hero.sub': 'Um espa\u00e7o seguro para processar seu relacionamento antes de reagir. Dispon\u00edvel 24/7.',
+        'feat.chat.title': 'Um melhor amigo, sempre acordado.',
+        'feat.breathe.title': 'Calma em segundos.',
+        'feat.memory.title': 'Te entende.',
+        'feat.privacy.title': 'Seu espa\u00e7o secreto seguro.',
+        'approach.title': 'N\u00e3o \u00e9 terapia.\nAlgo diferente.',
+        'download.title': 'Pronto para parar de espiralar?',
+      },
+      'tr': {
+        _sl: 'tr',
+        'hero.headline': 'Nefes al.',
+        'hero.sub': '\u0130li\u015fki kayg\u0131s\u0131 seni bast\u0131rd\u0131\u011f\u0131nda, g\u00fcvenli ve yarg\u0131s\u0131z bir alan. 7/24 kullan\u0131labilir.',
+        'feat.chat.title': 'Her zaman uyanan bir en iyi arkada\u015f.',
+        'feat.breathe.title': 'Saniyeler i\u00e7inde sakinlik.',
+        'feat.memory.title': 'Seni anl\u0131yor.',
+        'approach.title': 'Terapi de\u011fil.\nFarkl\u0131 bir \u015fey.',
+        'download.title': 'Spirali durdurmaya haz\u0131r m\u0131s\u0131n?',
+      },
+    };
+
+    /* ===== APP LOGIC ===== */
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('site-header');
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      const langSelect = document.getElementById('lang-select');
+      const langSelectFooter = document.getElementById('lang-select-footer');
+
+      /* -- Header scroll -- */
+      const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* -- Hamburger menu -- */
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        navLinks.classList.toggle('open');
+      });
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          hamburger.classList.remove('open');
+          navLinks.classList.remove('open');
+        });
+      });
+
+      /* -- Scroll reveal -- */
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      /* -- Spiral quotes stagger -- */
+      const quoteObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.querySelectorAll('.spiral-quote').forEach((q, i) => {
+              setTimeout(() => q.classList.add('visible'), i * 250);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+      const quotesEl = document.getElementById('spiral-quotes');
+      if (quotesEl) quoteObserver.observe(quotesEl);
+
+      /* -- i18n -- */
+      function setLanguage(locale) {
+        const t = T[locale];
+        if (!t) return;
+        const fallback = T['en-US'];
+        const screenshotLocale = t._sl || 'en-US';
+
+        // Update text
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          const val = t[key] || fallback[key];
+          if (val) {
+            if (key === 'approach.title') {
+              el.textContent = val;
+            } else {
+              el.textContent = val;
+            }
+          }
+        });
+
+        // Update screenshots
+        document.querySelectorAll('[data-screenshot]').forEach(el => {
+          const num = el.getAttribute('data-screenshot');
+          el.src = 'assets/screenshots/' + screenshotLocale + '/' + num.padStart(2, '0') + '.jpg';
+        });
+
+        // Sync both selects
+        [langSelect, langSelectFooter].forEach(sel => { if (sel) sel.value = locale; });
+
+        // Update html lang
+        document.documentElement.lang = locale.split('-')[0];
+        document.documentElement.setAttribute('data-locale', locale);
+        localStorage.setItem('ds-locale', locale);
+      }
+
+      function syncLang(e) { setLanguage(e.target.value); }
+      langSelect.addEventListener('change', syncLang);
+      langSelectFooter.addEventListener('change', syncLang);
+
+      // Detect language
+      const urlLang = new URLSearchParams(window.location.search).get('lang');
+      const saved = localStorage.getItem('ds-locale');
+      const browserBase = navigator.language.split('-')[0];
+      const browserMatch = Object.keys(T).find(k => k.startsWith(browserBase));
+
+      const initLocale = (urlLang && T[urlLang]) ? urlLang
+        : (saved && T[saved]) ? saved
+        : browserMatch || 'en-US';
+
+      if (initLocale !== 'en-US') {
+        setLanguage(initLocale);
+      } else {
+        [langSelect, langSelectFooter].forEach(s => { if (s) s.value = 'en-US'; });
+      }
+    });
+  </script>
 </body>
 </html>
