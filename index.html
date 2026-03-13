@@ -180,7 +180,11 @@
       color: var(--charcoal);
       text-decoration: none;
       letter-spacing: -0.03em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+    .logo-icon { width: 28px; height: 28px; object-fit: contain; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -218,6 +222,13 @@
       background-repeat: no-repeat;
       background-position: right 0.6rem center;
     }
+    /* Mobile actions (lang + hamburger) */
+    .mobile-actions {
+      display: none;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .lang-select-mobile { font-size: 0.8rem; padding: 0.3rem 1.6rem 0.3rem 0.5rem; }
     /* Hamburger */
     .hamburger {
       display: none;
@@ -590,7 +601,9 @@
       .privacy-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
+      .mobile-actions { display: flex; }
       .hamburger { display: block; }
+      .nav-links .lang-select { display: none; }
       .nav-links {
         display: none;
         position: fixed;
@@ -654,7 +667,7 @@
   <!-- HEADER -->
   <header id="site-header">
     <nav class="container">
-      <a href="/" class="logo">Don't Spiral</a>
+      <a href="/" class="logo"><img src="assets/icon.png" alt="" width="28" height="28" class="logo-icon">Don't Spiral</a>
       <div class="nav-links" id="nav-links">
         <a href="#features" data-i18n="nav.features">Features</a>
         <a href="#how-it-works" data-i18n="nav.how">How it Works</a>
@@ -673,9 +686,23 @@
         </select>
         <a href="#download" class="btn-nav" data-i18n="nav.download">Download</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="mobile-actions">
+        <select class="lang-select lang-select-mobile" id="lang-select-mobile" aria-label="Language">
+          <option value="en-US">EN</option>
+          <option value="de-DE">DE</option>
+          <option value="es-ES">ES</option>
+          <option value="fr-FR">FR</option>
+          <option value="it">IT</option>
+          <option value="ja">JA</option>
+          <option value="ko">KO</option>
+          <option value="pl">PL</option>
+          <option value="pt-BR">PT</option>
+          <option value="tr">TR</option>
+        </select>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -1177,6 +1204,7 @@ Something different.</h2>
       const hamburger = document.getElementById('hamburger');
       const navLinks = document.getElementById('nav-links');
       const langSelect = document.getElementById('lang-select');
+      const langSelectMobile = document.getElementById('lang-select-mobile');
       const langSelectFooter = document.getElementById('lang-select-footer');
 
       /* -- Header scroll -- */
@@ -1241,8 +1269,8 @@ Something different.</h2>
           el.src = 'assets/screenshots/' + screenshotLocale + '/' + num.padStart(2, '0') + '.jpg';
         });
 
-        // Sync both selects
-        [langSelect, langSelectFooter].forEach(sel => { if (sel) sel.value = locale; });
+        // Sync all selects
+        [langSelect, langSelectMobile, langSelectFooter].forEach(sel => { if (sel) sel.value = locale; });
 
         // Update html lang
         document.documentElement.lang = locale.split('-')[0];
@@ -1256,6 +1284,7 @@ Something different.</h2>
         navLinks.classList.remove('open');
       }
       langSelect.addEventListener('change', syncLang);
+      langSelectMobile.addEventListener('change', syncLang);
       langSelectFooter.addEventListener('change', syncLang);
 
       // Detect language
