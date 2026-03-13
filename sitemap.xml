@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://dontspiral.app/</loc>
+    <lastmod>2026-03-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dontspiral.app/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dontspiral.app/?lang=de-DE"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dontspiral.app/?lang=es-ES"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dontspiral.app/?lang=fr-FR"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://dontspiral.app/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://dontspiral.app/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://dontspiral.app/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dontspiral.app/?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://dontspiral.app/?lang=pt-BR"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://dontspiral.app/?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dontspiral.app/"/>
+  </url>
+  <url>
+    <loc>https://dontspiral.app/privacy.html</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dontspiral.app/terms.html</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
