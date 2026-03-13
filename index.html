@@ -168,6 +168,11 @@
       -webkit-backdrop-filter: blur(24px);
       box-shadow: 0 1px 0 rgba(139,158,139,0.1);
     }
+    header.menu-open {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: transparent !important;
+    }
     header nav {
       display: flex;
       align-items: center;
@@ -1213,15 +1218,19 @@ Something different.</h2>
       onScroll();
 
       /* -- Hamburger menu -- */
+      function closeMenu() {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+        header.classList.remove('menu-open');
+      }
       hamburger.addEventListener('click', () => {
+        const opening = !navLinks.classList.contains('open');
         hamburger.classList.toggle('open');
         navLinks.classList.toggle('open');
+        header.classList.toggle('menu-open');
       });
       navLinks.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          hamburger.classList.remove('open');
-          navLinks.classList.remove('open');
-        });
+        a.addEventListener('click', closeMenu);
       });
 
       /* -- Scroll reveal -- */
@@ -1280,8 +1289,7 @@ Something different.</h2>
 
       function syncLang(e) {
         setLanguage(e.target.value);
-        hamburger.classList.remove('open');
-        navLinks.classList.remove('open');
+        closeMenu();
       }
       langSelect.addEventListener('change', syncLang);
       langSelectMobile.addEventListener('change', syncLang);
