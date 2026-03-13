@@ -173,6 +173,11 @@
       -webkit-backdrop-filter: none !important;
       background: transparent !important;
     }
+    body.menu-open {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+    }
     header nav {
       display: flex;
       align-items: center;
@@ -1218,16 +1223,25 @@ Something different.</h2>
       onScroll();
 
       /* -- Hamburger menu -- */
+      let savedScrollY = 0;
+      function openMenu() {
+        savedScrollY = window.scrollY;
+        document.body.style.top = -savedScrollY + 'px';
+        hamburger.classList.add('open');
+        navLinks.classList.add('open');
+        header.classList.add('menu-open');
+        document.body.classList.add('menu-open');
+      }
       function closeMenu() {
         hamburger.classList.remove('open');
         navLinks.classList.remove('open');
         header.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
+        document.body.style.top = '';
+        window.scrollTo(0, savedScrollY);
       }
       hamburger.addEventListener('click', () => {
-        const opening = !navLinks.classList.contains('open');
-        hamburger.classList.toggle('open');
-        navLinks.classList.toggle('open');
-        header.classList.toggle('menu-open');
+        navLinks.classList.contains('open') ? closeMenu() : openMenu();
       });
       navLinks.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', closeMenu);
