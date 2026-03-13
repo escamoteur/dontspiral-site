@@ -8,6 +8,10 @@
   <meta name="keywords" content="relationship anxiety, ROCD, jealousy, overthinking, anxious attachment, breakup anxiety, AI coach, relationship OCD">
   <meta name="author" content="Don't Spiral">
   <meta name="theme-color" content="#F8F3ED">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="canonical" href="https://dontspiral.app">
 
   <!-- Open Graph -->
@@ -1246,7 +1250,11 @@ Something different.</h2>
         localStorage.setItem('ds-locale', locale);
       }
 
-      function syncLang(e) { setLanguage(e.target.value); }
+      function syncLang(e) {
+        setLanguage(e.target.value);
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      }
       langSelect.addEventListener('change', syncLang);
       langSelectFooter.addEventListener('change', syncLang);
 
