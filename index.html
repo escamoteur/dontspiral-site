@@ -1304,8 +1304,12 @@ Something different.</h2>
     document.addEventListener('DOMContentLoaded', () => {
       /* -- Smartlink on mobile -- */
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        var smartlink = 'https://go.dontspiral.app/web';
+        if (document.referrer) {
+          smartlink += '?ref=' + encodeURIComponent(document.referrer);
+        }
         document.querySelectorAll('.store-badge').forEach(a => {
-          a.href = 'https://go.dontspiral.app/web';
+          a.href = smartlink;
         });
       }
 
