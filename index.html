@@ -363,7 +363,7 @@
       display: flex;
       justify-content: center;
     }
-    .hero-visual img {
+    .hero-visual > img {
       width: 100%;
       max-width: 340px;
       height: auto;
@@ -388,6 +388,121 @@
     @keyframes breathe {
       0%, 100% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.4; }
       50% { transform: translate(-50%, -50%) scale(1.35); opacity: 0.65; }
+    }
+
+    /* ===== HERO CARD ===== */
+    .phone-frame {
+      max-width: 362px;
+      padding: 10px;
+      background: var(--charcoal);
+      border-radius: 42px;
+      box-shadow:
+        0 30px 60px -15px rgba(26,26,46,0.2),
+        inset 0 1px 0 rgba(255,255,255,0.08);
+      position: relative;
+    }
+    .phone-frame::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 76px;
+      height: 22px;
+      background: var(--charcoal);
+      border-radius: 14px;
+      z-index: 2;
+    }
+    .hero-card {
+      width: 100%;
+      aspect-ratio: 9 / 19.5;
+      background: var(--cream-warm);
+      border-radius: 32px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      padding: 52px 26px 32px;
+    }
+    .hero-card-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .hero-card-logo img {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      box-shadow: none;
+      max-width: none;
+    }
+    .hero-card-logo span {
+      font-family: var(--font-display);
+      font-size: 15px;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+    .hero-card h2 {
+      font-family: var(--font-display);
+      font-size: 34px;
+      line-height: 1.08;
+      color: var(--charcoal);
+      letter-spacing: -0.03em;
+      margin-bottom: 32px;
+      font-weight: 700;
+    }
+    .hero-card-situations {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+    .hero-card-situation {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .hero-card-dot {
+      width: 7px;
+      height: 7px;
+      min-width: 7px;
+      border-radius: 50%;
+      background: var(--sage);
+      margin-top: 8px;
+    }
+    .hero-card-situation span {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.4;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .hero-card-bottom {
+      margin-top: 36px;
+      padding-top: 0;
+    }
+    .hero-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .hero-card-cta svg {
+      width: 14px;
+      height: 14px;
+    }
+    .hero-card-subline {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 400;
     }
 
     /* ===== STORE BADGES ===== */
@@ -719,7 +834,25 @@
       .hero-sub { margin-left: auto; margin-right: auto; }
       .store-badges { justify-content: center; }
       .hero-visual { order: -1; margin-bottom: 1rem; }
-      .hero-visual img { max-width: 280px; }
+      .hero-visual > img { max-width: 280px; }
+      .phone-frame {
+        max-width: 300px;
+        padding: 8px;
+        border-radius: 36px;
+      }
+      .phone-frame::after { top: 16px; width: 64px; height: 18px; border-radius: 12px; }
+      .hero-card {
+        padding: 40px 20px 24px;
+        border-radius: 28px;
+      }
+      .hero-card h2 { font-size: 26px; margin-bottom: 24px; }
+      .hero-card-situations { gap: 10px; }
+      .hero-card-situation span { font-size: 13px; }
+      .hero-card-logo { margin-bottom: 20px; }
+      .hero-card-logo img { width: 24px; height: 24px; }
+      .hero-card-logo span { font-size: 13px; }
+      .hero-card-cta { padding: 10px 20px; font-size: 13px; }
+      .hero-card-subline { font-size: 11px; }
       .breathing-orb { width: 200px; height: 200px; }
 
       .feature-row {
@@ -828,7 +961,51 @@
         </div>
         <div class="hero-visual">
           <div class="breathing-orb" aria-hidden="true"></div>
-          <img data-screenshot="01" src="assets/screenshots/en-US/01.webp" alt="Don't Spiral app — Your 24/7 relationship intervention" width="630" height="1368" fetchpriority="high">
+          <div class="phone-frame">
+          <div class="hero-card">
+            <div class="hero-card-logo">
+              <img src="assets/icon.png" alt="Don't Spiral" width="30" height="30">
+              <span>Don't Spiral</span>
+            </div>
+            <h2 data-i18n="hero.card.headline">You really need to talk?</h2>
+            <div class="hero-card-situations">
+              <div class="hero-card-situation">
+                <div class="hero-card-dot"></div>
+                <span data-i18n="hero.card.s1">It's over but you can't let go?</span>
+              </div>
+              <div class="hero-card-situation">
+                <div class="hero-card-dot"></div>
+                <span data-i18n="hero.card.s2">They haven't texted back and you fear getting abandoned?</span>
+              </div>
+              <div class="hero-card-situation">
+                <div class="hero-card-dot"></div>
+                <span data-i18n="hero.card.s3">You had a fight and you're no longer sure who's wrong?</span>
+              </div>
+              <div class="hero-card-situation">
+                <div class="hero-card-dot"></div>
+                <span data-i18n="hero.card.s4">You keep wondering if you're with the right person?</span>
+              </div>
+              <div class="hero-card-situation">
+                <div class="hero-card-dot"></div>
+                <span data-i18n="hero.card.s5">You need to say something but you're scared they'll leave?</span>
+              </div>
+              <div class="hero-card-situation">
+                <div class="hero-card-dot"></div>
+                <span data-i18n="hero.card.s6">You're seeing someone new and afraid you'll mess it up?</span>
+              </div>
+            </div>
+            <div class="hero-card-bottom">
+              <a href="#download" class="hero-card-cta">
+                <span data-i18n="hero.card.cta">Start Talking</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <p class="hero-card-subline" data-i18n="hero.card.sub">Available 24/7. Your conversations stay private.</p>
+            </div>
+          </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1129,6 +1306,15 @@ Something different.</h2>
         'footer.terms': 'Terms of Use',
         'footer.contact': 'Contact',
         'footer.not_therapy': 'Don\u2019t Spiral is not a therapy or counseling service. It does not replace professional mental health support. If you are in crisis, please contact a professional or your local emergency services. \u00a9 2026 Don\u2019t Spiral. All rights reserved.',
+        'hero.card.headline': 'You really need to talk?',
+        'hero.card.s1': 'It\u2019s over but you can\u2019t let go?',
+        'hero.card.s2': 'They haven\u2019t texted back and you fear getting abandoned?',
+        'hero.card.s3': 'You had a fight and you\u2019re no longer sure who\u2019s wrong?',
+        'hero.card.s4': 'You keep wondering if you\u2019re with the right person?',
+        'hero.card.s5': 'You need to say something but you\u2019re scared they\u2019ll leave?',
+        'hero.card.s6': 'You\u2019re seeing someone new and afraid you\u2019ll mess it up?',
+        'hero.card.cta': 'Start Talking',
+        'hero.card.sub': 'Available 24/7. Your conversations stay private.',
       },
       'de-DE': {
         _sl: 'de-DE',
@@ -1192,6 +1378,15 @@ Something different.</h2>
         'footer.terms': 'Nutzungsbedingungen',
         'footer.contact': 'Kontakt',
         'footer.not_therapy': 'Don\u2019t Spiral ist kein Therapie- oder Beratungsservice. Bei Krisen kontaktiere bitte professionelle Hilfe. \u00a9 2026 Don\u2019t Spiral.',
+        'hero.card.headline': 'Du musst reden?',
+        'hero.card.s1': 'Es ist vorbei \u2014 aber loslassen geht nicht?',
+        'hero.card.s2': 'Sie haben nicht zur\u00fcckgeschrieben und du hast Angst, verlassen zu werden?',
+        'hero.card.s3': 'Immer noch keine Antwort? Was wenn es vorbei ist?',
+        'hero.card.s4': 'Streit gehabt und Du fragst Dich wer wirklich das Problem ist?',
+        'hero.card.s5': 'Du musst etwas ansprechen, aber hast Angst, dass er/sie geht?',
+        'hero.card.s6': 'Du lernst jemand Neues kennen und hast Angst, es zu vermasseln?',
+        'hero.card.cta': 'Jetzt reden',
+        'hero.card.sub': 'Rund um die Uhr da. Deine Gespr\u00e4che bleiben privat.',
       },
       'es-ES': {
         _sl: 'es-ES',
@@ -1255,6 +1450,15 @@ Something different.</h2>
         'footer.terms': 'T\u00e9rminos de uso',
         'footer.contact': 'Contacto',
         'footer.not_therapy': 'Don\u2019t Spiral no es un servicio de terapia ni asesoramiento. No sustituye el apoyo profesional de salud mental. Si est\u00e1s en crisis, contacta a un profesional o a los servicios de emergencia locales. \u00a9 2026 Don\u2019t Spiral. Todos los derechos reservados.',
+        'hero.card.headline': '\u00bfNecesitas hablar con alguien?',
+        'hero.card.s1': 'Se acab\u00f3, pero no puedes soltar?',
+        'hero.card.s2': 'No responde y tienes miedo de que te deje?',
+        'hero.card.s3': 'Discutisteis y ya no sabes qui\u00e9n tiene raz\u00f3n?',
+        'hero.card.s4': 'No dejas de preguntarte si es la persona correcta?',
+        'hero.card.s5': 'Tienes que decir algo, pero te da miedo que se vaya?',
+        'hero.card.s6': 'Conoces a alguien nuevo y tienes miedo de arruinarlo?',
+        'hero.card.cta': 'Empieza a hablar',
+        'hero.card.sub': 'Disponible 24/7. Tus conversaciones son privadas.',
       },
       'fr-FR': {
         _sl: 'fr-FR',
@@ -1318,6 +1522,15 @@ Something different.</h2>
         'footer.terms': 'Conditions d\u2019utilisation',
         'footer.contact': 'Contact',
         'footer.not_therapy': 'Don\u2019t Spiral n\u2019est pas un service de th\u00e9rapie ou de conseil. Il ne remplace pas le soutien professionnel en sant\u00e9 mentale. En cas de crise, contactez un professionnel ou les services d\u2019urgence locaux. \u00a9 2026 Don\u2019t Spiral. Tous droits r\u00e9serv\u00e9s.',
+        'hero.card.headline': 'Tu as vraiment besoin de parler\u00a0?',
+        'hero.card.s1': 'C\u2019est fini, mais tu n\u2019arrives pas \u00e0 tourner la page\u00a0?',
+        'hero.card.s2': 'Pas de r\u00e9ponse \u2014 et la peur d\u2019\u00eatre abandonn\u00e9(e)\u00a0?',
+        'hero.card.s3': 'Vous vous \u00eates disput\u00e9s et tu ne sais plus qui a tort\u00a0?',
+        'hero.card.s4': 'Tu te demandes sans cesse si c\u2019est la bonne personne\u00a0?',
+        'hero.card.s5': 'Tu dois dire quelque chose, mais tu as peur que tout s\u2019arr\u00eate\u00a0?',
+        'hero.card.s6': 'Quelqu\u2019un de nouveau \u2014 et la peur de tout g\u00e2cher\u00a0?',
+        'hero.card.cta': 'Commence \u00e0 parler',
+        'hero.card.sub': 'Disponible 24h/24. Tes conversations restent priv\u00e9es.',
       },
       'it': {
         _sl: 'it',
@@ -1381,6 +1594,15 @@ Something different.</h2>
         'footer.terms': 'Termini di utilizzo',
         'footer.contact': 'Contatti',
         'footer.not_therapy': 'Don\u2019t Spiral non \u00e8 un servizio di terapia o consulenza. Non sostituisce il supporto professionale per la salute mentale. In caso di crisi, contatta un professionista o i servizi di emergenza locali. \u00a9 2026 Don\u2019t Spiral. Tutti i diritti riservati.',
+        'hero.card.headline': 'Hai davvero bisogno di parlare?',
+        'hero.card.s1': '\u00c8 finita, ma non riesci a lasciar andare?',
+        'hero.card.s2': 'Nessuna risposta \u2014 e la paura di essere lasciato/a?',
+        'hero.card.s3': 'Avete litigato e non sai pi\u00f9 chi ha torto?',
+        'hero.card.s4': 'Continui a chiederti se \u00e8 la persona giusta?',
+        'hero.card.s5': 'Devi dire qualcosa, ma hai paura che se ne vada?',
+        'hero.card.s6': 'Qualcuno di nuovo \u2014 e la paura di rovinare tutto?',
+        'hero.card.cta': 'Inizia a parlare',
+        'hero.card.sub': 'Disponibile 24/7. Le tue conversazioni restano private.',
       },
       'ja': {
         _sl: 'ja',
@@ -1444,6 +1666,15 @@ Something different.</h2>
         'footer.terms': '利用規約',
         'footer.contact': 'お問い合わせ',
         'footer.not_therapy': 'Don\u2019t Spiralはセラピーやカウンセリングサービスではありません。専門的なメンタルヘルスサポートの代わりにはなりません。危機的状況にある場合は、専門家または地域の緊急サービスにご連絡ください。\u00a9 2026 Don\u2019t Spiral.',
+        'hero.card.headline': '\u8ab0\u304b\u306b\u8a71\u3057\u305f\u3044\uff1f',
+        'hero.card.s1': '\u7d42\u308f\u3063\u305f\u306e\u306b\u3001\u5fd8\u308c\u3089\u308c\u306a\u3044\uff1f',
+        'hero.card.s2': '\u8fd4\u4fe1\u304c\u306a\u3044\u2014\u2014\u898b\u6368\u3066\u3089\u308c\u308b\u306e\u304c\u6016\u3044\uff1f',
+        'hero.card.s3': '\u30b1\u30f3\u30ab\u3057\u3066\u3001\u3069\u3061\u3089\u304c\u60aa\u3044\u306e\u304b\u308f\u304b\u3089\u306a\u3044\uff1f',
+        'hero.card.s4': '\u3053\u306e\u4eba\u3067\u3044\u3044\u306e\u304b\u3001\u305a\u3063\u3068\u8003\u3048\u3066\u3057\u307e\u3046\uff1f',
+        'hero.card.s5': '\u4f1d\u3048\u305f\u3044\u3053\u3068\u304c\u3042\u308b\u306e\u306b\u3001\u53bb\u3089\u308c\u308b\u306e\u304c\u6016\u3044\uff1f',
+        'hero.card.s6': '\u65b0\u3057\u3044\u4eba\u3068\u4ed8\u304d\u5408\u3044\u59cb\u3081\u3066\u3001\u53f0\u7121\u3057\u306b\u3057\u305d\u3046\u3067\u6016\u3044\uff1f',
+        'hero.card.cta': '\u8a71\u3057\u59cb\u3081\u308b',
+        'hero.card.sub': '24\u6642\u9593\u5e74\u4e2d\u7121\u4f11\u3002\u4f1a\u8a71\u306f\u5b8c\u5168\u306b\u30d7\u30e9\u30a4\u30d9\u30fc\u30c8\u3002',
       },
       'ko': {
         _sl: 'ko',
@@ -1507,6 +1738,15 @@ Something different.</h2>
         'footer.terms': '이용약관',
         'footer.contact': '문의',
         'footer.not_therapy': 'Don\u2019t Spiral은 치료 또는 상담 서비스가 아닙니다. 전문적인 정신 건강 지원을 대체하지 않습니다. 위기 상황에서는 전문가 또는 지역 응급 서비스에 연락하세요. \u00a9 2026 Don\u2019t Spiral.',
+        'hero.card.headline': '\uc815\ub9d0 \ub204\uad70\uac00\uc640 \uc774\uc57c\uae30\ud558\uace0 \uc2f6\uc73c\uc138\uc694?',
+        'hero.card.s1': '\ub05d\ub0ac\ub294\ub370 \ub193\uc744 \uc218\uac00 \uc5c6\ub098\uc694?',
+        'hero.card.s2': '\ub2f5\uc7a5\uc774 \uc5c6\uc5b4\uc11c \ubc84\ub9bc\ubc1b\uc744\uae4c \ub450\ub835\ub098\uc694?',
+        'hero.card.s3': '\uc2f8\uc6e0\ub294\ub370 \ub204\uac00 \uc798\ubabb\ud55c \uac74\uc9c0 \ubaa8\ub974\uaca0\ub098\uc694?',
+        'hero.card.s4': '\uc774 \uc0ac\ub78c\uc774 \ub9de\ub294 \uc0ac\ub78c\uc778\uc9c0 \uacc4\uc18d \uace0\ubbfc\ub418\ub098\uc694?',
+        'hero.card.s5': '\ud560 \ub9d0\uc774 \uc788\ub294\ub370 \ub5a0\ub0a0\uae4c \ubd10 \ubb34\uc11c\uc6b4\uac00\uc694?',
+        'hero.card.s6': '\uc0c8\ub85c\uc6b4 \uc0ac\ub78c\uc744 \ub9cc\ub098\uace0 \uc788\ub294\ub370 \ub9dd\uce58\uae4c \ubd10 \uac81\ub098\ub098\uc694?',
+        'hero.card.cta': '\uc774\uc57c\uae30 \uc2dc\uc791\ud558\uae30',
+        'hero.card.sub': '24\uc2dc\uac04 \uc5b8\uc81c\ub098 \uc774\uc6a9 \uac00\ub2a5. \ub300\ud654\ub294 \uc644\uc804\ud788 \ube44\uacf5\uac1c.',
       },
       'pl': {
         _sl: 'pl',
@@ -1570,6 +1810,15 @@ Something different.</h2>
         'footer.terms': 'Regulamin',
         'footer.contact': 'Kontakt',
         'footer.not_therapy': 'Don\u2019t Spiral nie jest us\u0142ug\u0105 terapeutyczn\u0105 ani doradcz\u0105. Nie zast\u0119puje profesjonalnego wsparcia zdrowia psychicznego. W sytuacji kryzysowej skontaktuj si\u0119 z profesjonalist\u0105 lub lokalnymi s\u0142u\u017cbami ratunkowymi. \u00a9 2026 Don\u2019t Spiral. Wszelkie prawa zastrze\u017cone.',
+        'hero.card.headline': 'Potrzebujesz z kim\u015b porozmawia\u0107?',
+        'hero.card.s1': 'To koniec, ale nie potrafisz pu\u015bci\u0107?',
+        'hero.card.s2': 'Brak odpowiedzi \u2014 i strach, \u017ce ci\u0119 porzuci?',
+        'hero.card.s3': 'Pok\u0142\u00f3cili\u015bcie si\u0119 i nie wiesz, kto zawini\u0142?',
+        'hero.card.s4': 'Ci\u0105gle zastanawiasz si\u0119, czy to w\u0142a\u015bciwa osoba?',
+        'hero.card.s5': 'Musisz co\u015b powiedzie\u0107, ale boisz si\u0119, \u017ce odejdzie?',
+        'hero.card.s6': 'Kto\u015b nowy \u2014 i strach, \u017ce wszystko zepsujesz?',
+        'hero.card.cta': 'Zacznij rozmow\u0119',
+        'hero.card.sub': 'Dost\u0119pne 24/7. Twoje rozmowy pozostaj\u0105 prywatne.',
       },
       'pt-BR': {
         _sl: 'pt-BR',
@@ -1633,6 +1882,15 @@ Something different.</h2>
         'footer.terms': 'Termos de Uso',
         'footer.contact': 'Contato',
         'footer.not_therapy': 'Don\u2019t Spiral n\u00e3o \u00e9 um servi\u00e7o de terapia ou aconselhamento. N\u00e3o substitui o suporte profissional de sa\u00fade mental. Em caso de crise, entre em contato com um profissional ou os servi\u00e7os de emerg\u00eancia locais. \u00a9 2026 Don\u2019t Spiral. Todos os direitos reservados.',
+        'hero.card.headline': 'Voc\u00ea precisa falar com algu\u00e9m?',
+        'hero.card.s1': 'Acabou, mas voc\u00ea n\u00e3o consegue seguir em frente?',
+        'hero.card.s2': 'Sem resposta \u2014 e o medo de ser abandonado/a?',
+        'hero.card.s3': 'Brigaram e voc\u00ea n\u00e3o sabe mais quem est\u00e1 errado?',
+        'hero.card.s4': 'Voc\u00ea n\u00e3o para de se perguntar se \u00e9 a pessoa certa?',
+        'hero.card.s5': 'Precisa dizer algo, mas tem medo de que v\u00e1 embora?',
+        'hero.card.s6': 'Algu\u00e9m novo \u2014 e o medo de estragar tudo?',
+        'hero.card.cta': 'Comece a conversar',
+        'hero.card.sub': 'Dispon\u00edvel 24/7. Suas conversas s\u00e3o privadas.',
       },
       'tr': {
         _sl: 'tr',
@@ -1696,6 +1954,15 @@ Something different.</h2>
         'footer.terms': 'Kullan\u0131m Ko\u015fullar\u0131',
         'footer.contact': '\u0130leti\u015fim',
         'footer.not_therapy': 'Don\u2019t Spiral bir terapi veya dan\u0131\u015fmanl\u0131k hizmeti de\u011fildir. Profesyonel ruh sa\u011fl\u0131\u011f\u0131 deste\u011finin yerini almaz. Kriz durumunda l\u00fctfen bir profesyonele veya yerel acil servislere ba\u015fvurun. \u00a9 2026 Don\u2019t Spiral. T\u00fcm haklar\u0131 sakl\u0131d\u0131r.',
+        'hero.card.headline': 'Konu\u015fman m\u0131 gerekiyor?',
+        'hero.card.s1': 'Bitti ama b\u0131rakam\u0131yor musun?',
+        'hero.card.s2': 'Cevap yok \u2014 ve terk edilme korkusu?',
+        'hero.card.s3': 'Kavga ettiniz ve kimin haks\u0131z oldu\u011funu bilemiyor musun?',
+        'hero.card.s4': 'Do\u011fru ki\u015fiyle mi birliktesin diye s\u00fcrekli d\u00fc\u015f\u00fcn\u00fcyor musun?',
+        'hero.card.s5': 'Bir \u015fey s\u00f6ylemen gerekiyor ama gidece\u011finden mi korkuyorsun?',
+        'hero.card.s6': 'Yeni biri \u2014 ve mahvetme korkusu?',
+        'hero.card.cta': 'Konu\u015fmaya Ba\u015fla',
+        'hero.card.sub': '7/24 yan\u0131nda. Konu\u015fmalar\u0131n gizli kal\u0131r.',
       },
     };
 
