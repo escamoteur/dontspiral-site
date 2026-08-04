@@ -1,13 +1,23 @@
 # Don't Spiral
 
-> Your 24/7 safe space when relationship anxiety hits. AI-powered support for ROCD, jealousy, overthinking, and breakup anxiety. Not therapy — a friend who gets it.
+> Your 24/7 safe space when relationship anxiety hits. AI-powered support for anxious attachment, ROCD, jealousy, overthinking, and breakup anxiety. Not therapy — a friend who gets it.
 
 ## About
 
 Don't Spiral is a mobile app (iOS and Android) that acts as an AI relationship-anxiety
 coach. It remembers your story and helps you find clarity before you react — available
-around the clock for ROCD, jealousy, overthinking, and breakup anxiety. It is not
-therapy and not a replacement for professional help.
+around the clock, built for the acute moment: the 2am spiral, the post-fight shakes,
+the text you're about to regret. It helps with:
+
+- Anxious attachment and fear of abandonment
+- Relationship anxiety and constant worry about your partner
+- ROCD (Relationship OCD) — intrusive doubts about love and commitment
+- Jealousy, insecurity, and reassurance-seeking
+- Overthinking every text, conversation, and interaction
+- Breakup anxiety and codependency patterns
+
+It draws on techniques from CBT and Exposure Response Prevention (ERP) and helps build
+secure attachment habits. It is not therapy and not a replacement for professional help.
 
 ## Key Pages
 
