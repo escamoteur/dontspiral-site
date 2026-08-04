@@ -1,0 +1,25 @@
+# Don't Spiral
+
+> Your 24/7 safe space when relationship anxiety hits. AI-powered support for ROCD, jealousy, overthinking, and breakup anxiety. Not therapy — a friend who gets it.
+
+## About
+
+Don't Spiral is a mobile app (iOS and Android) that acts as an AI relationship-anxiety
+coach. It remembers your story and helps you find clarity before you react — available
+around the clock for ROCD, jealousy, overthinking, and breakup anxiety. It is not
+therapy and not a replacement for professional help.
+
+## Key Pages
+
+- [Home](https://dontspiral.app/): What Don't Spiral is, features, and FAQ
+- [Privacy Policy](https://dontspiral.app/privacy.html): Privacy policy
+- [Terms of Service](https://dontspiral.app/terms.html): Terms of service
+
+## Get the App
+
+- [iOS (App Store)](https://apps.apple.com/app/id6758227509)
+- [Android (Google Play)](https://play.google.com/store/apps/details?id=app.dontspiral)
+
+## Contact
+
+- Email: apps@burkharts.net
